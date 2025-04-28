@@ -104,7 +104,7 @@ if predicted_aqi_till_today:
     for idx, row in future_df.iterrows():
         st.markdown(f"**{row['Date']}**")
         fig, ax = plt.subplots(figsize=(8, 0.6))
-        norm_value = row['Forecasted AQI'] / 700  # Assuming 500 is maximum AQI scale
+        norm_value = row['Forecasted AQI'] / 500  # Assuming 500 is maximum AQI scale
         ax.barh(0, norm_value, color=plt.cm.RdYlGn_r(norm_value))
         ax.set_xlim(0, 1)
         ax.set_yticks([])
